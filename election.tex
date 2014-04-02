@@ -1,0 +1,45 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{CJK,url}
+\usepackage{verbatim}
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn} 
+
+\title{记忆币 MemoryCoin 竞选指南}
+\author{tomorrow}
+\date{\today}
+\maketitle
+
+记忆币之核心团队通过竞选产生，每位当选人可获得所有挖矿奖励的1\%。当选周期为两小时。由于记忆币每六分钟一块，每次任期可以得到20块的奖励。本文旨在指导您在最短的时间内加入竞选。假设您已经具备数字币以及linux之常识。想竞选记忆币CEO（竞选其他职位操作类似），步骤如下。
+
+\subsection*{安装地址生成器oclvanitygen}
+
+\begin{verbatim}
+# git clone https://github.com/samr7/vanitygen
+# cd vanitygen
+# make oclvanitygen
+\end{verbatim}
+
+\subsection*{生成特殊地址}
+
+如下命令生成以 MVTEceo 开头的记忆币地址。需要算几分钟至几小时。
+\begin{verbatim}
+# oclvanitygen -o grantawardkey.txt -k -X 50 MVTEceo
+\end{verbatim}
+生成的地址将保存到文件 \verb+grantawardkey.txt+ 里。每个地址配备一个私钥。随便选一个地址作为CEO地址，并保管好对应私钥 \verb+PRIVATE_KEY+。建议打印。
+
+\subsection*{导入CEO地址}
+下载官方钱包。在调试命令行输入
+\begin{verbatim}
+# walletpassphrase MY_PASSWORD 1000
+# importprivkey PRIVATE_KEY
+\end{verbatim}
+
+\subsection*{发表竞选声明}
+在官方论坛
+\url{https://bitsharestalk.org/index.php?board=35.0}
+发文声明加入竞选。投票方式为发送 0.00000001 MMC
+到你生成的地址。票数即投票人钱包内记忆币之余额。
+
+\end{CJK}
+\end{document}
